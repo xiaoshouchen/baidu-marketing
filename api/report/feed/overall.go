@@ -8,7 +8,7 @@ import (
 )
 
 // Overall 信息流整体账户报告
-func Overall(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func Overall(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 2172649
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }

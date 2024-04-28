@@ -8,7 +8,7 @@ import (
 )
 
 // Keyword 关键词报告
-func Keyword(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func Keyword(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 2602783
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }

@@ -8,7 +8,7 @@ import (
 )
 
 // Product 搜索商品报告
-func Product(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func Product(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 248654
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }

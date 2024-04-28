@@ -8,7 +8,7 @@ import (
 )
 
 // Visitor 搜索访客明细报告
-func Visitor(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func Visitor(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 4017932
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }
