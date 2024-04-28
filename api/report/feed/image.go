@@ -8,7 +8,7 @@ import (
 )
 
 // Image 图片报告
-func Image(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func Image(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 2094817
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }

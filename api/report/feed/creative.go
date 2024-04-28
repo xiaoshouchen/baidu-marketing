@@ -8,7 +8,7 @@ import (
 )
 
 // Creative 创意报告
-func Creative(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func Creative(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 2094816
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }

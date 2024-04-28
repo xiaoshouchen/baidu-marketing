@@ -8,7 +8,7 @@ import (
 )
 
 // Campaign 计划报告
-func Campaign(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func Campaign(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 2276038
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }

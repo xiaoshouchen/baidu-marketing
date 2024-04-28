@@ -8,7 +8,7 @@ import (
 )
 
 // QueryWord 搜索词报告
-func QueryWord(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func QueryWord(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 2307838
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }

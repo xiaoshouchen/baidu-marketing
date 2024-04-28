@@ -8,7 +8,7 @@ import (
 )
 
 // Audience 人群报告
-func Audience(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, *report.ReportData, error) {
+func Audience(clt *core.SDKClient, auth *model.RequestHeader, reportRequest *report.GetReportDataRequest) (*model.ResponseHeader, []report.ReportData, error) {
 	reportRequest.ReportType = 9718404
 	return reportApi.GetReportData(clt, auth, reportRequest)
 }
